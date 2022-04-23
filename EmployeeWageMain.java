@@ -1,15 +1,6 @@
 import java.util.Random;
 
-class EmployeeWageMain {
-
-	public static void main(String args[])
-	{
-		System.out.println("Welcome !");
-		ComputeWage.computeWage();
-	}
-}
-
-/** using class methods and varibles to compute wage **/
+/** calculating Employee wage for multiple companies **/
 class ComputeWage
 {
 	
@@ -18,11 +9,20 @@ class ComputeWage
 	static int dayPerMonth = 20;
 	static int totalWorkingHr  = 0 ;
 
-	static void computeWage()
-	{
-		System.out.println("Welcome !");
+	static String companyName;
+	static int wagePerHour;
+	static int workingHour;
+	static int workingDays;
 
-		while( totalWorkingHr <= 100 && dayPerMonth <=20 ) {
+	static void calculateEmpWage(String companyName, int wagePerHour, int workingHour, int workingDays)
+	{	
+
+		this.companyName = companyName;
+		this.wagePerHour = wagePerHour;
+		this.workingHours = workingHour;
+		this.workingDays = workingDays;
+
+			while( totalWorkingHr <= 100 && dayPerMonth <=20 ) {
 			Random rand = new Random();
 			int isEmployee = rand.nextInt(3);	
 			
@@ -57,3 +57,13 @@ class ComputeWage
 		}
 	}
 }
+
+class EmployeeWageMain {
+
+	public static void main(String args[])
+	{
+		System.out.println("Welcome To Employee Wage Computation program !");
+		ComputeWage.computeWage();
+	}
+}
+
