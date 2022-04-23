@@ -2,19 +2,30 @@ import java.util.Random;
 
 class EmployeeWageMain {
 
+	public static void main(String args[])
+	{
+		System.out.println("Welcome !");
+		ComputeWage.computeWage();
+	}
+}
+
+/** using class methods and varibles to compute wage **/
+class ComputeWage
+{
+	
 	static int wagePerHr = 20; 
 	static int workingHr = 8;
 	static int dayPerMonth = 20;
 	static int totalWorkingHr  = 0 ;
-	
-	public static void main(String args[])
+
+	static void computeWage()
 	{
 		System.out.println("Welcome !");
-		Random rand = new Random();
-			
+
 		while( totalWorkingHr <= 100 && dayPerMonth <=20 ) {
-			
+			Random rand = new Random();
 			int isEmployee = rand.nextInt(3);	
+			
 			switch (isEmployee) {
 			case 1 :
 			{
