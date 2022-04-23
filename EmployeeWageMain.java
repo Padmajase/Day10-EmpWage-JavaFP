@@ -1,6 +1,6 @@
 import java.util.Random;
 
-/** saving the total Wage for Each company **/
+/** managing the Employee Wage for multiple company **/
 class EmployeeWageMain {
 	
 	static int wagePerHr = 20; 
@@ -14,7 +14,6 @@ class EmployeeWageMain {
 	static int workingHour;
 	static int workingDays;
 
-	
 	public void calculateEmpWage(String companyName, int wagePerHour, int workingHour, int workingDays)
 	{	
 		this.companyName = companyName;
@@ -54,17 +53,17 @@ class EmployeeWageMain {
 
 	@Override
 	public String toString() {
-		return "wage for company " + companyName +" is "+ totalWage;
+		return "wage for company " mpanyName +" is "+ totalWage;
 	}
 	
 
 	public static void main(String args[])
 	{
 		System.out.println("Welcome To Employee Wage Computation program !");
-		EmployeeWageMain wipro = new EmployeeWageMain();
+		EmployeeWageMain wipro = new EmployeeWageMain ();
 		wipro.calculateEmpWage("WIPRO", 20, 8, 20);
 		System.out.println(wipro);
-		EmployeeWageMain tcs = new EmployeeWageMain();
+		EmployeeWageMain tcs = new EmployeeWageMain ();
 		wipro.calculateEmpWage("TCS", 30, 8, 20);
 		System.out.println(tcs);
 	}
