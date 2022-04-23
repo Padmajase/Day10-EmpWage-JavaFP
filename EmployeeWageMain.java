@@ -1,23 +1,28 @@
 import java.util.Random;
 
-class EmployeeWageMain
- {
+class EmployeeWageMain {
 
 	static int wagePerHr = 20;
 	static int fullTimeHr = 8;
-	public static void main(String args[]) {
+	static int partTimeHr = 8;
 
+	public static void main(String args[]) {
 	System.out.println("Welcome !");
 
 	Random rand = new Random();
-	int isEmployee = rand.nextInt(2);	
-	System.out.println(isEmployee);
 	
-	/** Calculating Daily  Employee Wage **/
-
-	if(isEmployee == 1) {
-		System.out.println("Employee is Present");
-		System.out.println("Daily Employee Wage = " +(wagePerHr * fullTimeHr));
+	/** Adding Part time Employee & Wage **/
+	int isEmployee = rand.nextInt(3);	
+	
+	if(isEmployee == 1)
+	{
+		System.out.println("Employee is full time Present");
+		System.out.println("Daily full time Employee Wage = " +(wagePerHr * fullTimeHr));
+		
+	} else if (isEmployee == 2) {
+		System.out.println("Employee is part time Present");
+		System.out.println("Daily part time Employee Wage = " +(wagePerHr * partTimeHr));
+		
 	} else {
 		System.out.println("Employee is Absent");
 		System.out.println("Daily Employee Wage = 0 " );
