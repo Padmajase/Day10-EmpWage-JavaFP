@@ -1,15 +1,21 @@
 import java.util.Random;
 
-/** managing the Employee Wage for multiple company **/
-class EmployeeWageMain {
-	
-	static int wagePerHr = 20; 
-	static int workingHr = 8;
-	static int dayPerMonth = 20;
-	static int totalWorkingHr  = 0 ;
-	static int totalWage = 0;
+// managing Employee Wage of multiple companies using API approach 
 
-	static String companyName;
+interface EmployeeWageMain {
+	
+	public static final int wagePerHr = 20; 
+	public static final int workingHr = 8;
+	public static finalint dayPerMonth = 20;
+	public static finalint totalWorkingHr  = 0 ;
+	public static final int totalWage = 0;
+
+	abstract public void calculateEmpWage(String companyName, int wagePerHour, int workingHour, int workingDays);
+}
+
+class Wipro {
+	
+	String companyName;
 	static int wagePerHour;
 	static int workingHour;
 	static int workingDays;
@@ -60,7 +66,7 @@ class EmployeeWageMain {
 	public static void main(String args[])
 	{
 		System.out.println("Welcome To Employee Wage Computation program !");
-		EmployeeWageMain wipro = new EmployeeWageMain ();
+		EmployeeWageMain wipro = new EmployeeWageMain();
 		wipro.calculateEmpWage("WIPRO", 20, 8, 20);
 		System.out.println(wipro);
 		EmployeeWageMain tcs = new EmployeeWageMain ();
