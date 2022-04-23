@@ -1,25 +1,25 @@
 import java.util.Random;
 
-/** calculating Employee wage for multiple companies **/
-class ComputeWage
-{
+/** saving the total Wage for Each company **/
+class EmployeeWageMain {
 	
 	static int wagePerHr = 20; 
 	static int workingHr = 8;
 	static int dayPerMonth = 20;
 	static int totalWorkingHr  = 0 ;
+	static int totalWage = 0;
 
 	static String companyName;
 	static int wagePerHour;
 	static int workingHour;
 	static int workingDays;
 
-	static void calculateEmpWage(String companyName, int wagePerHour, int workingHour, int workingDays)
+	
+	public void calculateEmpWage(String companyName, int wagePerHour, int workingHour, int workingDays)
 	{	
-
 		this.companyName = companyName;
 		this.wagePerHour = wagePerHour;
-		this.workingHours = workingHour;
+		this.workingHour = workingHour;
 		this.workingDays = workingDays;
 
 			while( totalWorkingHr <= 100 && dayPerMonth <=20 ) {
@@ -29,22 +29,17 @@ class ComputeWage
 			switch (isEmployee) {
 			case 1 :
 			{
-				System.out.println("Employee is full time Present");
-				int wage1 = (wagePerHr * workingHr );
-				System.out.println("Daily full time Employee Wage = " + wage1);
+				int wage = (wagePerHr * workingHour );
 			}
 			break;
 			case 2 :
 			{
-				System.out.println("Employee is part time Present");
-				int wage2 = (wagePerHr * workingHr );
-				System.out.println("Daily part time Employee Wage = " + wage2);
+				int wage = (wagePerHr * workingHour );
 			}	
 			break;
 			case 0 :
 			{
-				System.out.println("Employee is Absent");
-				System.out.println("Daily Employee Wage = 0 " );
+				int wage  = 0;
 			}
 			break;
 			default :
@@ -52,18 +47,26 @@ class ComputeWage
 			break;
 
 			} 
-			totalWorkingHr = totalWorkingHr + workingHr ;
-			System.out.println(totalWorkingHr );
+			totalWorkingHr = totalWorkingHr + workingHour ;
 		}
+		totalWage = wagePerHour * totalWorkingHr ;
 	}
-}
 
-class EmployeeWageMain {
+	@Override
+	public String toString() {
+		return "wage for company " + companyName +" is "+ totalWage;
+	}
+	
 
 	public static void main(String args[])
 	{
 		System.out.println("Welcome To Employee Wage Computation program !");
-		ComputeWage.computeWage();
+		EmployeeWageMain wipro = new EmployeeWageMain();
+		wipro.calculateEmpWage("WIPRO", 20, 8, 20);
+		System.out.println(wipro);
+		EmployeeWageMain tcs = new EmployeeWageMain();
+		wipro.calculateEmpWage("TCS", 30, 8, 20);
+		System.out.println(tcs);
 	}
 }
 
